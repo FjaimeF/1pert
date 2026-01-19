@@ -1,24 +1,27 @@
 import time
+import sys
 
 print("Automatizacion iniciada")
 
-# Automatizacion mal hecha
+# Variables globales innecesarias
+contador = "0"   # debería ser int
+
 for i in range(5):
     print("Paso", i)
-    time.sleep(2)  # lentísimo a propósito
+    time.sleep(1)
 
-    archivo = open("log.txt", "a")
-    archivo.write("Paso ejecutado numero " + str(i) + "\n")
-    # NO se cierra el archivo (mala practica)
+    # Error lógico y de tipo
+    contador = contador + i   # ❌ string + int
 
+    # Escritura de archivo sin control
+    f = open("log.txt", "a")
+    f.write("Paso " + str(i) + "\n")
+    # ❌ no se cierra el archivo
+
+    # Error intencional en medio
     if i == 2:
-        print("Error falso, pero seguimos")
-    if i == 2:  # repetido sin sentido
-        pass
+        print("Algo salio mal pero seguimos...")
+
+print("Resultado final:", contador)
 
 print("Automatizacion terminada")
-
-# Se vuelve a ejecutar sin razon
-print("Reiniciando...")
-time.sleep(3)
-print("Listo")

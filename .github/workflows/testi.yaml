@@ -24,4 +24,4 @@ jobs:
       run: pip install -r requis.txt
 
     - name: Test with pytest
-      run: python wall.py
+      run: pytest test_manual.py

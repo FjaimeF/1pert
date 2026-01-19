@@ -11,7 +11,7 @@ for i in range(5):
     time.sleep(1)
 
     
-    contador = contador + i   
+    contador = 0   
 
     
     f = open("log.txt", "a")

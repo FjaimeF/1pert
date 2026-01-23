@@ -1,7 +1,10 @@
-def sumar(a, b):
-    return a + b
+import automatizacion
 
+def test_suma_normal():
+    assert automatizacion.sumar(2, 3) == 5
 
-print("Test 1:", sumar(2, 3) == 5)
-print("Test 2:", sumar(0, 0) == 0)
-print("Test 3:", sumar(-1, 1) == 0)
+def test_suma_ceros():
+    assert automatizacion.sumar(0, 0) == 0
+
+def test_suma_negativos():
+    assert automatizacion.sumar(-1, 1) == 0
